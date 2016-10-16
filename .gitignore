@@ -1,22 +1,14 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.idea/
+/.gradle/
+
 /Customer/Customer.iml
 /Store/Store.iml
 /springboot.iml
-/Examples.iml
+/eureka-client/eureka-client.iml
+/eureka-server/eureka-server.iml
+
 /Customer/build/
 /Store/build/
-Customer/build/
-Customer/src/test/
-Store/build/
-Store/src/test/
-/eureka-client/eureka-client.iml
-.gradle/
-eureka-client/build.gradle
 eureka-client/build/
-eureka-client/src/test/
-eureka-server/build.gradle
 eureka-server/build/
-eureka-server/eureka-server.iml
-eureka-server/settings.gradle
-eureka-server/src/test/
