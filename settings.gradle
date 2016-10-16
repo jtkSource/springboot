@@ -1,0 +1,8 @@
+rootProject.name = 'Examples'
+
+include(":Customer")
+project(":Customer").projectDir=file("Customer")
+
+
+include(":Store")
+project(":Store").projectDir=file("Store")
