@@ -1,8 +1,5 @@
-rootProject.name = 'Examples'
+rootProject.name = 'springboot'
 
-include(":Customer")
-project(":Customer").projectDir=file("Customer")
+include 'Customer'
+include 'Store'
 
-
-include(":Store")
-project(":Store").projectDir=file("Store")

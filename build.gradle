@@ -1,14 +1,61 @@
-group 'Spring.Microservices'
-version '1.0-SNAPSHOT'
+group '${projectGroup}'
+version '${projectVersion}'
 
+apply plugin: 'idea'
 apply plugin: 'java'
+apply plugin: "io.spring.dependency-management"
 
-sourceCompatibility = 1.8
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springbootversion}")
+    }
+}
+
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+subprojects {
+
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: 'java'
+    apply plugin: 'spring-boot'
+
+    sourceCompatibility = projectSrcCompatibility
+    targetCompatibility = projectSrcCompatibility
+
+    tasks.withType(JavaCompile) {
+        options.incremental = true
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.RELEASE"
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+
+    task "create-dirs" << {
+        sourceSets*.java.srcDirs*.each { it.mkdirs() }
+        sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+    }
+
+}
+
+allprojects {
+    apply plugin: "java"
+    apply plugin: 'idea'
+
+    version = project.version
+    group = project.group
 }

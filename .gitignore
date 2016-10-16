@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/
+/Customer/Customer.iml
+/Store/Store.iml
+/springboot.iml
+/Examples.iml
+/Customer/build/
+/Store/build/
+Customer/build/
+Customer/src/test/
+Store/build/
+Store/src/test/
