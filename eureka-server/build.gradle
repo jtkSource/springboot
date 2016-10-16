@@ -1,0 +1,15 @@
+group '${projectGroup}'
+version '${projectVersion}'
+
+jar {
+    baseName = 'eureka-server'
+    version = version
+}
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+    compile ('org.springframework.cloud:spring-cloud-starter-eureka-server'){
+        exclude module: "spring-boot-starter-tomcat"
+    }
+
+}
