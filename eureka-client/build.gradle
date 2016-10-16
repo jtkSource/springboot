@@ -1,0 +1,12 @@
+group '${projectGroup}'
+version '${projectVersion}'
+
+jar {
+    baseName = 'eureka-client'
+    version = version
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
+}
