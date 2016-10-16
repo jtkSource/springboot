@@ -12,6 +12,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springbootversion}")
+        classpath ("io.spring.gradle:dependency-management-plugin:${springDependencyManagementPlugin}")
     }
 }
 
@@ -37,13 +38,26 @@ subprojects {
     dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.RELEASE"
+            mavenBom "org.springframework.cloud:spring-cloud-netflix:${springCloudNetflixVersion}"
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springbootversion}"
+            mavenBom "io.spring.platform:platform-bom:${springPlatformBomVersion}"
         }
+    }
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter")
+        compile("org.springframework.boot:spring-boot-starter-actuator")
+        compile('org.springframework.boot:spring-boot-starter-web'){
+            exclude module: 'spring-boot-starter-tomcat'
+        }
+        compile('org.springframework.boot:spring-boot-starter-jetty')
+
+        testCompile group: 'junit', name: 'junit', version: '4.11'
     }
 
     repositories {
         mavenCentral()
     }
-
 
     task "create-dirs" << {
         sourceSets*.java.srcDirs*.each { it.mkdirs() }
@@ -56,6 +70,6 @@ allprojects {
     apply plugin: "java"
     apply plugin: 'idea'
 
-    version = project.version
-    group = project.group
+    version = projectVersion
+    group = projectGroup
 }

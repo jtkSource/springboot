@@ -16,16 +16,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('org.springframework.data:spring-data-rest-hal-browser')
     compile('org.springframework.boot:spring-boot-starter-hateoas')
-    compile('org.springframework.cloud:spring-cloud-starter-zookeeper-discovery')
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
     compile('org.springframework.cloud:spring-cloud-starter-feign')
-    compile('org.springframework.boot:spring-boot-starter-mail')
-    compile('org.springframework.boot:spring-boot-starter-actuator')
-    compile('org.springframework.boot:spring-boot-starter-remote-shell')
-    compile('org.springframework.boot:spring-boot-starter-web'){
-        exclude module: 'spring-boot-starter-tomcat'
-    }
-    compile('org.springframework.boot:spring-boot-starter-jetty')
-
     compile()
 
     runtime('com.h2database:h2')

@@ -1,7 +1,6 @@
 package jtk.springboot.store.diner;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 /**
  * Created by jubin on 15/10/16.
  */
