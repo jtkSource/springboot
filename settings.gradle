@@ -1,7 +1,9 @@
 rootProject.name = 'springboot'
 
-include 'Customer'
+include 'CinemaService'
 include 'Store'
 include 'eureka-server'
 include 'eureka-client'
+include 'ZuulServer'
+include 'AuthServer'
 
