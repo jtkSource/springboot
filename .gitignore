@@ -15,15 +15,9 @@ eureka-server/build/
 /AuthServer/build/
 /CinemaService/build/
 /ZuulServer/build/
-AuthServer/build.gradle
 AuthServer/build/
-AuthServer/src/test/
 CinemaService/build/classes/main/jtk/springboot/jpa/
 CinemaService/build/classes/main/jtk/springboot/mysql/
 CinemaService/build/resources/
-CinemaService/src/test/
 Store/src/test/
-ZuulServer/build.gradle
 ZuulServer/build/
-ZuulServer/src/test/
-eureka-server/src/test/
