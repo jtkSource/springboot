@@ -1,0 +1,30 @@
+group 'jtk.springboot.cloud.samples'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+
+
+sourceSets{
+    main{
+        java {srcDir 'src/main/java'}
+        resources{srcDir 'src/main/resources'}
+    }
+    test{
+        java {srcDir 'src/test/java'}
+        resources{srcDir 'src/test/resources'}
+    }
+}
+
+dependencies {
+
+    compile ('com.google.guava:guava')
+    compile ('org.springframework.cloud:spring-cloud-starter-zuul')
+    compile ('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-feign')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
